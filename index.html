@@ -94,4 +94,40 @@ The blog will function exactly the same as the single-file version, but now with
         </div>
     </section>
 
-    
+      <main class="main-content">
+        <div class="container">
+            <section class="content-section">
+                <h2 class="section-title">Explore Key Categories</h2>
+                <div class="categories">
+                    <div class="category-card" onclick="filterByCategory('trends')">
+                        <h3>📈 Industry Trends</h3>
+                        <p>Stay informed about emerging patterns, market shifts, and future predictions that are shaping various industries.</p>
+                    </div>
+                    <div class="category-card" onclick="filterByCategory('technology')">
+                        <h3>🚀 Innovative Technologies</h3>
+                        <p>Explore cutting-edge technologies, breakthrough innovations, and game-changing solutions revolutionizing business.</p>
+                    </div>
+                    <div class="category-card" onclick="filterByCategory('practices')">
+                        <h3>⭐ Best Practices</h3>
+                        <p>Learn proven methodologies, expert strategies, and actionable insights to optimize performance and results.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Latest Articles</h2>
+                <div class="articles" id="articlesContainer">
+                    <article class="article-card" data-category="technology">
+                        <div class="article-image">🤖</div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span>Technology</span>
+                                <span>June 5, 2025</span>
+                            </div>
+                            <h3 class="article-title">AI Revolution: How Machine Learning is Transforming Business Operations</h3>
+                            <p class="article-excerpt">Artificial Intelligence is no longer a futuristic concept. Companies across industries are leveraging ML algorithms to automate processes, enhance decision-making, and drive unprecedented efficiency gains.</p>
+                            <button class="read-more" onclick="readArticle('ai-revolution')">Read More</button>
+                        </div>
+                    </article>
+
+                    
