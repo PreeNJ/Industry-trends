@@ -73,89 +73,89 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-//     // Add dynamic loading animation for articles
-//     const articles = document.querySelectorAll('.article-card');
-//     articles.forEach((article, index) => {
-//         article.style.animationDelay = `${index * 0.1}s`;
-//         article.style.animation = 'fadeInUp 0.6s ease forwards';
-//     });
-// });
+    // Add dynamic loading animation for articles
+    const articles = document.querySelectorAll('.article-card');
+    articles.forEach((article, index) => {
+        article.style.animationDelay = `${index * 0.1}s`;
+        article.style.animation = 'fadeInUp 0.6s ease forwards';
+    });
+});
 
-// // Additional utility functions
+// Additional utility functions
 
-// // Show all articles (reset filters)
-// function showAllArticles() {
-//     const articles = document.querySelectorAll('.article-card');
-//     articles.forEach(article => {
-//         article.style.display = 'block';
-//         article.style.animation = 'fadeInUp 0.5s ease';
-//     });
-//     document.querySelector('.section-title').textContent = 'Latest Articles';
-//     document.getElementById('searchInput').value = '';
-// }
+// Show all articles (reset filters)
+function showAllArticles() {
+    const articles = document.querySelectorAll('.article-card');
+    articles.forEach(article => {
+        article.style.display = 'block';
+        article.style.animation = 'fadeInUp 0.5s ease';
+    });
+    document.querySelector('.section-title').textContent = 'Latest Articles';
+    document.getElementById('searchInput').value = '';
+}
 
-// // Get articles by category
-// function getArticlesByCategory(category) {
-//     const articles = document.querySelectorAll('.article-card');
-//     const categoryArticles = [];
+// Get articles by category
+function getArticlesByCategory(category) {
+    const articles = document.querySelectorAll('.article-card');
+    const categoryArticles = [];
     
-//     articles.forEach(article => {
-//         if (article.getAttribute('data-category') === category) {
-//             categoryArticles.push({
-//                 title: article.querySelector('.article-title').textContent,
-//                 excerpt: article.querySelector('.article-excerpt').textContent,
-//                 date: article.querySelector('.article-meta span:last-child').textContent,
-//                 category: article.querySelector('.article-meta span:first-child').textContent
-//             });
-//         }
-//     });
+    articles.forEach(article => {
+        if (article.getAttribute('data-category') === category) {
+            categoryArticles.push({
+                title: article.querySelector('.article-title').textContent,
+                excerpt: article.querySelector('.article-excerpt').textContent,
+                date: article.querySelector('.article-meta span:last-child').textContent,
+                category: article.querySelector('.article-meta span:first-child').textContent
+            });
+        }
+    });
     
-//     return categoryArticles;
-// }
+    return categoryArticles;
+}
 
-// // Search within specific category
-// function searchInCategory(searchTerm, category) {
-//     const articles = document.querySelectorAll('.article-card');
+// Search within specific category
+function searchInCategory(searchTerm, category) {
+    const articles = document.querySelectorAll('.article-card');
     
-//     articles.forEach(article => {
-//         const articleCategory = article.getAttribute('data-category');
-//         const title = article.querySelector('.article-title').textContent.toLowerCase();
-//         const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
+    articles.forEach(article => {
+        const articleCategory = article.getAttribute('data-category');
+        const title = article.querySelector('.article-title').textContent.toLowerCase();
+        const excerpt = article.querySelector('.article-excerpt').textContent.toLowerCase();
         
-//         if (articleCategory === category && 
-//             (title.includes(searchTerm.toLowerCase()) || excerpt.includes(searchTerm.toLowerCase()))) {
-//             article.style.display = 'block';
-//             article.style.animation = 'fadeInUp 0.5s ease';
-//         } else {
-//             article.style.display = 'none';
-//         }
-//     });
-// }
+        if (articleCategory === category && 
+            (title.includes(searchTerm.toLowerCase()) || excerpt.includes(searchTerm.toLowerCase()))) {
+            article.style.display = 'block';
+            article.style.animation = 'fadeInUp 0.5s ease';
+        } else {
+            article.style.display = 'none';
+        }
+    });
+}
 
-// // Add article interaction tracking (for analytics)
-// function trackArticleInteraction(articleId, action) {
-//     // In a real implementation, this would send data to analytics service
-//     console.log(`Article interaction tracked: ${articleId} - ${action}`);
-// }
+// Add article interaction tracking (for analytics)
+function trackArticleInteraction(articleId, action) {
+    // In a real implementation, this would send data to analytics service
+    console.log(`Article interaction tracked: ${articleId} - ${action}`);
+}
 
-// // Add click tracking to articles
-// document.addEventListener('DOMContentLoaded', function() {
-//     const readMoreButtons = document.querySelectorAll('.read-more');
-//     readMoreButtons.forEach(button => {
-//         button.addEventListener('click', function() {
-//             const articleCard = this.closest('.article-card');
-//             const articleTitle = articleCard.querySelector('.article-title').textContent;
-//             trackArticleInteraction(articleTitle, 'read-more-clicked');
-//         });
-//     });
+// Add click tracking to articles
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreButtons = document.querySelectorAll('.read-more');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const articleCard = this.closest('.article-card');
+            const articleTitle = articleCard.querySelector('.article-title').textContent;
+            trackArticleInteraction(articleTitle, 'read-more-clicked');
+        });
+    });
     
-//     const articleCards = document.querySelectorAll('.article-card');
-//     articleCards.forEach(card => {
-//         card.addEventListener('click', function(e) {
-//             if (!e.target.classList.contains('read-more')) {
-//                 const articleTitle = this.querySelector('.article-title').textContent;
-//                 trackArticleInteraction(articleTitle, 'card-clicked');
-//             }
-//         });
-//     });
-// });
+    const articleCards = document.querySelectorAll('.article-card');
+    articleCards.forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('read-more')) {
+                const articleTitle = this.querySelector('.article-title').textContent;
+                trackArticleInteraction(articleTitle, 'card-clicked');
+            }
+        });
+    });
+});
