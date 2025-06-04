@@ -81,9 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Additional utility functions
-
-// Show all articles (reset filters)
+ 
 function showAllArticles() {
     const articles = document.querySelectorAll('.article-card');
     articles.forEach(article => {
@@ -94,7 +92,7 @@ function showAllArticles() {
     document.getElementById('searchInput').value = '';
 }
 
-// Get articles by category
+
 function getArticlesByCategory(category) {
     const articles = document.querySelectorAll('.article-card');
     const categoryArticles = [];
@@ -113,7 +111,7 @@ function getArticlesByCategory(category) {
     return categoryArticles;
 }
 
-// Search within specific category
+
 function searchInCategory(searchTerm, category) {
     const articles = document.querySelectorAll('.article-card');
     
