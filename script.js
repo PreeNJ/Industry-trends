@@ -1,3 +1,4 @@
+// Search functionality
 function performSearch() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     const articles = document.querySelectorAll('.article-card');
@@ -16,6 +17,7 @@ function performSearch() {
     });
 }
 
+// Filter by category
 function filterByCategory(category) {
     const articles = document.querySelectorAll('.article-card');
     
@@ -29,7 +31,8 @@ function filterByCategory(category) {
             article.style.display = 'none';
         }
     });
- 
+    
+    // Update section title
     const sectionTitle = document.querySelector('.section-title');
     const categoryNames = {
         'trends': 'Industry Trends',
@@ -38,20 +41,22 @@ function filterByCategory(category) {
     };
     sectionTitle.textContent = categoryNames[category] || 'Latest Articles';
 }
- 
+
+// Read article function
 function readArticle(articleId) {
     alert(`Opening article: ${articleId}. In a real implementation, this would navigate to the full article page.`);
 }
- 
+
+// Search on Enter key
 document.addEventListener('DOMContentLoaded', function() {
- 
+    // Search on Enter key
     document.getElementById('searchInput').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             performSearch();
         }
     });
 
-
+    // Reset filter when search is cleared
     document.getElementById('searchInput').addEventListener('input', function(e) {
         if (e.target.value === '') {
             const articles = document.querySelectorAll('.article-card');
@@ -62,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
- 
+    // Smooth scrolling for navigation
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -81,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
- 
+// Additional utility functions
+
+// Show all articles (reset filters)
 function showAllArticles() {
     const articles = document.querySelectorAll('.article-card');
     articles.forEach(article => {
@@ -92,7 +99,7 @@ function showAllArticles() {
     document.getElementById('searchInput').value = '';
 }
 
-
+// Get articles by category
 function getArticlesByCategory(category) {
     const articles = document.querySelectorAll('.article-card');
     const categoryArticles = [];
@@ -111,7 +118,7 @@ function getArticlesByCategory(category) {
     return categoryArticles;
 }
 
-
+// Search within specific category
 function searchInCategory(searchTerm, category) {
     const articles = document.querySelectorAll('.article-card');
     
@@ -150,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const articleCards = document.querySelectorAll('.article-card');
     articleCards.forEach(card => {
         card.addEventListener('click', function(e) {
+            // Only track if not clicking the read-more button
             if (!e.target.classList.contains('read-more')) {
                 const articleTitle = this.querySelector('.article-title').textContent;
                 trackArticleInteraction(articleTitle, 'card-clicked');

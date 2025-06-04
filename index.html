@@ -1,67 +1,3 @@
-The blog includes sample articles on current topics like AI transformation, green computing, data-driven decision making, cybersecurity, future of work, and agile project management. Each article card includes metadata (category, date), engaging visuals, and excerpt previews.
-
-You can expand this by adding more articles, implementing a backend for dynamic content management, or integrating with content management systems. Would you like me to modify any specific aspects or add additional features?
-
-
-
-
-Could you kindly separate the code according to the files
-
-Edit
-I'll separate the blog code into individual files for better organization and maintainability.
-
-
-index.html
-Code 
-
-styles.css
-Code 
-
-script.js
-Code 
-Perfect! I've separated the blog code into three organized files:
-
-File Structure:
-1. index.html
-Contains the complete HTML structure
-Semantic markup with proper sections
-Links to external CSS and JS files
-All content including navigation, hero section, categories, articles, and footer
-2. styles.css
-All CSS styling separated by sections:
-Global styles and resets
-Header and navigation styles
-Hero section styling
-Main content and categories
-Article cards and layouts
-Footer styles
-Animations and keyframes
-Responsive design media queries
-3. script.js
-All JavaScript functionality:
-Search functionality
-Category filtering
-Article interactions
-Event listeners
-Utility functions
-Analytics tracking (placeholder)
-DOM manipulation
-Key Benefits of This Structure:
-✅ Maintainability: Each file has a specific purpose ✅ Scalability: Easy to add new features to specific files ✅ Performance: CSS and JS can be cached separately ✅ Organization: Clean separation of concerns ✅ Team Development: Multiple developers can work on different files ✅ Debugging: Easier to locate and fix issues
-
-To Use These Files:
-Create a folder for your blog project
-Save each file with its respective name (index.html, styles.css, script.js)
-Make sure all three files are in the same directory
-Open index.html in a web browser
-The blog will function exactly the same as the single-file version, but now with proper file organization for professional development!
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +19,7 @@ The blog will function exactly the same as the single-file version, but now with
         </nav>
     </header>
 
-     <section class="hero">
+    <section class="hero">
         <div class="container">
             <h1>Stay Ahead of the Curve</h1>
             <p>Discover the latest industry trends, innovative technologies, and proven best practices</p>
@@ -94,7 +30,7 @@ The blog will function exactly the same as the single-file version, but now with
         </div>
     </section>
 
-      <main class="main-content">
+    <main class="main-content">
         <div class="container">
             <section class="content-section">
                 <h2 class="section-title">Explore Key Categories</h2>
@@ -130,7 +66,7 @@ The blog will function exactly the same as the single-file version, but now with
                         </div>
                     </article>
 
-                     <article class="article-card" data-category="trends">
+                    <article class="article-card" data-category="trends">
                         <div class="article-image">🌱</div>
                         <div class="article-content">
                             <div class="article-meta">
